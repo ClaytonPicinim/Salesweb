@@ -9,11 +9,18 @@ namespace SalesWebMvc.Data
 {
     public class SalesWebMvcContext : DbContext
     {
-        public SalesWebMvcContext (DbContextOptions<SalesWebMvcContext> options)
+        public SalesWebMvcContext(DbContextOptions<SalesWebMvcContext> options)
             : base(options)
         {
         }
+        //LInha original, abaixo o SalesWebMVC.Models foi apagado por conta do namespace ja ser ser esse nome,
+        //tornando desnecessário a declaração
+        //public DbSet<SalesWebMvc.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<Seller> Seller { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
 
-        public DbSet<SalesWebMvc.Models.Department> Department { get; set; }
+
+
     }
 }
